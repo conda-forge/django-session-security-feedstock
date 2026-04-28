@@ -1,17 +1,17 @@
 {% set name = "django-session-security" %}
-{% set version = "2.6.7" %}
+{% set version = "2.6.8" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 752b70865706afca39a62650eacd5d1e03a2baba31d46b2e1b96ad60c30553f3
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: f8949d021eee5e237385413a1173bb90c3bd80ce2d56e412a5644608de815109
 
 build:
   noarch: python
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
